@@ -1,4 +1,5 @@
 def run_tests(shirt_one, shirt_two, total_cost, total_discount):
+
     # Unit tests to check your solution
     assert shirt_one.price == 10, 'shirt_one price should be 10'
     assert shirt_one.color == 'red', ' shirt_one should be red'

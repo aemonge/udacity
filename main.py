@@ -1,4 +1,5 @@
-# Write your code here
+# from tests import check_results, run_tests
+
 class Shirt:
     """ A Super Shirt """
     def __init__(self, shirt_color, shirt_size, shirt_style, shirt_price):
@@ -13,19 +14,32 @@ class Shirt:
     def discount(self, discount):
         return self.price * (1 - discount)
 
-shirt_one = Shirt("red", "S", "long-sleeve", 25)
+class Pants:
+    """ A Super Pants """
+    def __init__(self, color, waist_size, length, price):
+        self.color = color
+        self.waist_size = waist_size
+        self.length = length
+        self.price = price
 
-print("Items:\n")
-print("  Shirt with price: {}".format(shirt_one.price))
-shirt_one.change_price(10)
-print("  new price: {}".format(shirt_one.price))
-print("  discounted price: {}".format(shirt_one.discount(0.12)))
+    def change_price(self, new_price):
+        self.price = new_price
 
-shirt_two = Shirt("orange", "L", "short-sleeve", 10)
-total = sum([shirt_one.price, shirt_two.price])
-print("\nTotal: {}".format(total))
-total_discount = shirt_one.discount(0.14) + shirt_two.discount(0.06);
-print("Total (discounted): {}".format(total_discount))
+    def discount(self, discount):
+        return self.price * (1 - discount)
 
-from tests import run_tests
-run_tests(shirt_one, shirt_two, total, total_discount)
+def check_results():
+    pants = Pants('red', 35, 36, 15.12)
+    assert pants.color == 'red'
+    assert pants.waist_size == 35
+    assert pants.length == 36
+    assert pants.price == 15.12
+
+    pants.change_price(10) == 10
+    assert pants.price == 10
+
+    assert pants.discount(.1) == 9
+
+    print('You made it to the end of the check. Nice job!')
+
+check_results()

@@ -10,7 +10,11 @@ probability_not_cancer  = 1 - probability_has_cancer    # P(~C)
 sensitivity_negative    = 1 - sensitivity_positive      # P(Neg | C)
 specificity_negative    = 1 - specificity_positive      # P(Pos | ~C)
 
-msg=" === PREMISES WORLD ===\n\
+msg=" =========== GIVEN ==========\n\
+ C: Cancer\n\
+ Pos: Positive Cancer Test\n\
+ Neg: Negtive Cancer Test\n\
+ === PREMISES WORLD ===\n\
   P(C)        = {}\n\
   P(Pos | C)  = {}\n\
   P(Neg | ~C) = {}\n\

@@ -12,7 +12,7 @@ Robot Lives in G: Green and R: Red
     ------
     P(sR)                  = P(R) * P(sR|R) + P(G) * P(sR|G)
 """
-red, green = .5, .5
+red, green = 0, .1
 see_red_at_red, see_greenat_green= .8, .8
 # ---------------
 see_red_at_green = 1 - see_red_at_red

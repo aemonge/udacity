@@ -19,6 +19,10 @@ ans= """
     P(A,R)                  = {}
     P(B,R)                  = {}
     P(C,R)                  = {}
+    ------
+    P(A|R)                  = {}
+    P(B|R)                  = {}
+    P(C|R)                  = {}
 """
 a, b, c = .3333, .3333, .3333
 see_red_a, see_green_b, see_green_c =  .9, .9, .9
@@ -32,7 +36,11 @@ b_see_red = (b * (1 - see_green_b))
 c_see_red = (b * (1 - see_green_c))
 # ----
 normalizer = sum([a_see_red, b_see_red, c_see_red])
-print(":normalizer ", normalizer);
+a_given_see_red = a_see_red / normalizer
+b_given_see_red = b_see_red / normalizer
+c_given_see_red = c_see_red / normalizer
+
 print(ans.format(
-    round(a_see_red, 4), round(b_see_red, 4), round(c_see_red, 4)
+    round(a_see_red, 4), round(b_see_red, 4), round(c_see_red, 4),
+    round(a_given_see_red, 4), round(b_given_see_red, 4), round(c_given_see_red, 4)
 ))

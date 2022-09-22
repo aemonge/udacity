@@ -1,46 +1,28 @@
 #!/usr/bin/python3
-msg = """
-A: Red   Box
-B: Green Box
-C" Green Box
+msg="""
+Sebastian travels so much, he can't remember where he is
+    P(away)      = {}
+    P(home)      = {}
+    P(rain|home) = {}
+    P(rain|away) = {}
+"""
+away, home = .6, .4
+rains_home  = .01
+rains_away  = .3
 
-Robot Lives in one box
-    P(A)                    = {}
-    P(B)                    = {}
-    P(C)                    = {}
-    ------
-    P(R|A) ~see red in A~   = {}
-    P(G|B) ~see green in B~ = {}
-    P(G|C) ~see green in C~ = {}
+print(msg.format(away, home, rains_home, rains_away))
+
+ans="""
+  Sebastian wakes up and it's raining
+    P(home|rain) = {}
 """
 
-ans= """
-    ----------------------------
-    P(A,R)                  = {}
-    P(B,R)                  = {}
-    P(C,R)                  = {}
-    ------
-    P(A|R)                  = {}
-    P(B|R)                  = {}
-    P(C|R)                  = {}
-"""
-a, b, c = .3333, .3333, .3333
-see_red_a, see_green_b, see_green_c =  .9, .9, .9
-print(msg.format(
-    round(a, 4), round(b, 4), round(c, 4),
-    round(see_red_a, 4), round(see_green_b, 4), round(see_green_c, 4)
-))
-# ---------------
-a_see_red = (a * see_red_a)
-b_see_red = (b * (1 - see_green_b))
-c_see_red = (b * (1 - see_green_c))
-# ----
-normalizer = sum([a_see_red, b_see_red, c_see_red])
-a_given_see_red = a_see_red / normalizer
-b_given_see_red = b_see_red / normalizer
-c_given_see_red = c_see_red / normalizer
+mid="""
+    P(home, rain) =
 
-print(ans.format(
-    round(a_see_red, 4), round(b_see_red, 4), round(c_see_red, 4),
-    round(a_given_see_red, 4), round(b_given_see_red, 4), round(c_given_see_red, 4)
-))
+"""
+home_raining = home * rains_home
+away_raining = away * rains_away
+zum = sum([away_raining, home_raining])
+
+print(ans.format(home_raining/zum))

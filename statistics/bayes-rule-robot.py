@@ -18,6 +18,7 @@ ans= """
     ----------------------------
     P(A,R)                  = {}
     P(B,R)                  = {}
+    P(C,R)                  = {}
 """
 a, b, c = .3333, .3333, .3333
 see_red_a, see_green_b, see_green_c =  .9, .9, .9
@@ -28,6 +29,10 @@ print(msg.format(
 # ---------------
 a_see_red = (a * see_red_a)
 b_see_red = (b * (1 - see_green_b))
+c_see_red = (b * (1 - see_green_c))
+# ----
+normalizer = sum([a_see_red, b_see_red, c_see_red])
+print(":normalizer ", normalizer);
 print(ans.format(
-    round(a_see_red, 4), round(b_see_red, 4)
+    round(a_see_red, 4), round(b_see_red, 4), round(c_see_red, 4)
 ))

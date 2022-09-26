@@ -1,3 +1,0 @@
-#!/bin/bash
-clear
-python3 ./valuing-houses-5.py

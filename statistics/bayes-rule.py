@@ -1,10 +1,12 @@
+#!/usr/bin/python3
+
 # Given C -> Cancer, we want to understand the possibilities of having cancer
 # Given a Test that indicate a probability of having cancer
 ROUND=4
 
 probability_has_cancer = 0.1                            # P(C)
 sensitivity_positive = 0.9                              # P(Pos | C)
-specificity_positive = 0.5                              # P(Neg | ~C)
+specificity_positive = 0.8                              # P(Neg | ~C)
 #######
 probability_not_cancer  = 1 - probability_has_cancer    # P(~C)
 sensitivity_negative    = 1 - sensitivity_positive      # P(Neg | C)
@@ -52,8 +54,8 @@ positive_msg="  --- Positives ---\n\
   P(C, Pos)   = {}\n\
   P(~C, Pos)  = {}\n\
   P(Pos)      = {}\n\
-  P(C | Pos)  = {}\n\
   P(~C | Pos) = {}\n\
+  P(C | Pos)  = {}\n\
 \n"
 
 probability_with_cancer_positive     = probability_has_cancer * sensitivity_positive

@@ -52,4 +52,16 @@ def spreadsheet():
     items = items.rename(index={'Pot': 'Skillet'}, columns={'Ob\'s Family': 'Obson'})
     print(items, '\n')
 
-spreadsheet()
+    print(items.dropna(axis=0), '\n', items.dropna(axis=1), '\n')
+    print(items.isnull())
+    print('_______________________________________________________')
+    items = items.fillna(-1)
+    print(items, '\n')
+
+def databases():
+    data = pd.read_csv('./fake-company.csv')
+    print(data)
+    print(data.groupby(['Year'])['Salary'].sum())
+    print(data.groupby(['Department'])['Salary'].mean())
+
+databases()

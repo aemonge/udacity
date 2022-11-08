@@ -50,11 +50,12 @@ plt.hist(data = pokemon, x = 'speed', bins = bins)
 inc = 10
 bins = np.arange(pokemon['speed'].min(), pokemon['speed'].max() + inc, inc)
 sb.displot(pokemon['speed'], kde = True) # kde = False -> To remove the line
-#|%%--%%| <ELJt0iOVBm|kqTeQmvxAc>
+
+# |%%--%%| <ELJt0iOVBm|kqTeQmvxAc>
 """°°°
 # Sub plots
 °°°"""
-#|%%--%%| <kqTeQmvxAc|PAKl1fGhYa>
+# |%%--%%| <kqTeQmvxAc|PAKl1fGhYa>
 
 # Resize the chart, and have two plots side-by-side
 # set a larger figure size for subplots
@@ -71,11 +72,11 @@ plt.subplot(1, 2, 2) # 1 row, 2 cols, subplot 2
 bins = np.arange(0, pokemon['speed'].max()+1/4, 1/4)
 plt.hist(data = pokemon, x = 'speed', bins = bins);
 
-#|%%--%%| <PAKl1fGhYa|TXBIVvW3dJ>
+# |%%--%%| <PAKl1fGhYa|TXBIVvW3dJ>
 """°°°
 ## What if we remove the subplot
 °°°"""
-#|%%--%%| <TXBIVvW3dJ|FgBLUtWBMQ>
+# |%%--%%| <TXBIVvW3dJ|FgBLUtWBMQ>
 
 # Resize the chart, and have two plots side-by-side
 # set a larger figure size for subplots
@@ -90,11 +91,11 @@ plt.hist(data = pokemon, x = 'speed', bins = bins);
 bins = np.arange(0, pokemon['speed'].max()+1/4, 1/4)
 plt.hist(data = pokemon, x = 'speed', bins = bins);
 
-#|%%--%%| <FgBLUtWBMQ|oSP3cxGtMO>
+# |%%--%%| <FgBLUtWBMQ|oSP3cxGtMO>
 """°°°
 ## Spacing out the data
 °°°"""
-#|%%--%%| <oSP3cxGtMO|8FnucGvSFw>
+# |%%--%%| <oSP3cxGtMO|8FnucGvSFw>
 
 # Resize the chart, and have two plots side-by-side
 # set a larger figure size for subplots
@@ -108,4 +109,3 @@ plt.hist(data = pokemon, x = 'speed', bins = bins, rwidth=0.7);
 # histogram on right, example of too-small bin size
 bins = np.arange(0, pokemon['speed'].max()+1/4, 1/4)
 plt.hist(data = pokemon, x = 'speed', bins = bins, rwidth=0.7);
-

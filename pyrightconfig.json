@@ -1,0 +1,5 @@
+{
+  "reportGeneralTypeIssues": false,
+  "anomalous-backslash-in-string": false,
+  "reportInvalidStringEscapeSequence": false,
+}

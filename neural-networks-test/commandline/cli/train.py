@@ -16,14 +16,15 @@ import click
 @click.command()
 @click.argument("data_directory", type=click.Path(exists=True, dir_okay=True, readable=True), required=1)
 @click.option('-c', '--category-name',type=click.Path(exists=True, file_okay=True, readable=True), required=1)
-@click.option('-a', '--arch', type=click.STRING, default='squeezenet_1_1')
+@click.option('-a', '--arch', type=click.Choice(['squeezenet_1_1', 'Densenet_161']), default='squeezenet_1_1')
 @click.option('-l', '--learning-rate', type=click.FLOAT, default=0.1)
 @click.option('-m', '--momentum', type=click.FLOAT, default=0.9)
 @click.option('-e', '--epochs', type=click.INT, default=3)
+@click.option('-h', '--hidden_units', type=click.INT, default=None)
 @click.option('-g', '--gpu', type=click.BOOL, is_flag=True, default=False)
 @click.option('-s', '--save-dir', type=click.Path(exists=True, dir_okay=True, readable=True))
 
-def train(data_directory, category_name, arch, learning_rate, momentum, epochs, gpu, save_dir):
+def train(data_directory, category_name, arch, learning_rate, momentum, hidden_units, epochs, gpu, save_dir):
   """
     Train a model on the given data directory. Currently supporting the following architectures:\n
       * squeezenet_1_1\n
@@ -43,7 +44,7 @@ def train(data_directory, category_name, arch, learning_rate, momentum, epochs, 
 
   class_count = len(cat_to_name)
 
-  model, criterion, optimizer = get_model(arch, class_count, learning_rate, momentum, gpu=gpu)
+  model, criterion, optimizer = get_model(arch, class_count, learning_rate, hidden_units, momentum, gpu=gpu)
   do_train(dataloaders, epochs, model, criterion, optimizer)
 
   if save_dir is not None:

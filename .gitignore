@@ -1,5 +1,9 @@
 __pycache__
+.env
 aemonge-udacity-image-classifier
 .DS_Store
 __pycache__
 projects
+neural-networks-test/commandline/data
+neural-networks-test/*pth
+neural-networks-test/commandline/checkpoints

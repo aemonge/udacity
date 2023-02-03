@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import click
+
+from cli.train import train
+from cli.test import test
+from cli.sanity import sanity
+from cli.predict import predict
+
+@click.group()
+def cli():
+  """
+    A simple wrapper for the four main functions asked in my Udacity tutorial.
+  """
+
+cli.add_command(train)
+cli.add_command(test)
+cli.add_command(sanity)
+cli.add_command(predict)
+
+if __name__ == '__main__':
+  cli()

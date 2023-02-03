@@ -1,0 +1,6 @@
+{
+  "venv": "udacity",
+  "venvPath": "~/.anaconda3/envs/udacity",
+  "reportUnknownMemberType": "none",
+  "reportOptionalMemberAccess": "none"
+}
